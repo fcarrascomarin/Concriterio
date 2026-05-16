@@ -1,0 +1,16 @@
+{
+  "name": "Con Criterio",
+  "short_name": "Con Criterio",
+  "description": "Plataforma independiente de análisis público, formación aplicada e innovación territorial sobre seguridad, convivencia y sistema penal.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f1026",
+  "theme_color": "#0f1026",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

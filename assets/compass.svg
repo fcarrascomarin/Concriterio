@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Brújula Con Criterio</title>
+  <desc id="desc">Símbolo lineal de brújula que representa orientación y criterio.</desc>
+  <g fill="none" stroke="#1c1f4d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="60" cy="60" r="42" opacity=".35"/>
+    <path d="M60 8v104M8 60h104" opacity=".7"/>
+    <path d="M60 8l12 38 40 14-40 14-12 38-12-38L8 60l40-14 12-38z"/>
+    <path d="M60 30l8 22 22 8-22 8-8 22-8-22-22-8 22-8 8-22z"/>
+  </g>
+</svg>
