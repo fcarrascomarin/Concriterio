@@ -1,6 +1,17 @@
-# Con Criterio — base web estática
+# Con Criterio — web estática actualizada
 
-Base inicial en **HTML + CSS + JS** para publicar en GitHub Pages y editar en Visual Studio Code.
+Base en **HTML + CSS + JS** para publicar en GitHub Pages y editar en Visual Studio Code.
+
+## Versión actual
+
+Esta versión ajusta la vitrina pública de Con Criterio al documento maestro del proyecto:
+
+- Hero más directo: menos ruido, más criterio, mejores decisiones.
+- Oferta pública reducida a tres servicios iniciales.
+- Método expresado como flujo operativo: delimitar, escuchar, distinguir, priorizar y proyectar.
+- Sección de equipo con Benjamín Sepúlveda y Francisca Carrasco.
+- Contacto orientado a reunión por servicio concreto.
+- Ajustes visuales para una presencia más sobria, institucional y menos decorativa.
 
 ## Estructura
 
