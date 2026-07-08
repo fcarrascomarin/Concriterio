@@ -1599,3 +1599,539 @@ main [id] {
     padding: 14px;
   }
 }
+
+/* =========================================================
+   CON CRITERIO V6 - SECCIONES TIPO PANTALLA + ARMONÍA VISUAL
+   Objetivo: cada bloque principal se percibe como una página completa.
+   En mobile y pantallas bajas se mantiene scroll natural para no cortar contenido.
+========================================================= */
+
+:root {
+  --max-width: 1240px;
+  --cc-panel-offset: 58px;
+}
+
+/* Anclas más precisas para header compacto */
+section[id],
+main [id] {
+  scroll-margin-top: calc(var(--cc-panel-offset) + 18px);
+}
+
+/* Títulos menos comprimidos y mejor respiración editorial */
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+p,
+li,
+.article-card h3,
+.service-card h3 {
+  text-wrap: pretty;
+}
+
+.section-head {
+  max-width: 1040px;
+}
+
+.section-head h2,
+.split-grid h2,
+.about-grid h2,
+.contact-grid h2,
+.trust-head h2 {
+  max-width: 1060px;
+}
+
+.narrow {
+  width: min(100% - 40px, 1040px);
+}
+
+/* Experiencia de una pantalla por sección en escritorio */
+@media (min-width: 981px) and (min-height: 720px) {
+  html {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: var(--cc-panel-offset);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .section {
+    min-height: calc(100svh - var(--cc-panel-offset));
+    display: grid;
+    align-items: center;
+    padding-block: clamp(42px, 5vh, 68px);
+    scroll-snap-align: start;
+  }
+
+  .hero {
+    min-height: calc(100svh - var(--cc-panel-offset));
+  }
+
+  .site-footer {
+    scroll-snap-align: end;
+  }
+}
+
+/* Pantallas muy altas: más aire sin dejar contenidos pegados al borde */
+@media (min-width: 981px) and (min-height: 900px) {
+  .section {
+    padding-block: clamp(58px, 6vh, 88px);
+  }
+}
+
+/* Hero más equilibrado y menos cargado en la derecha */
+@media (min-width: 981px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.22fr) minmax(280px, .58fr);
+    gap: clamp(38px, 5vw, 78px);
+  }
+
+  .hero-card {
+    align-self: center;
+  }
+
+  .hero-logo {
+    max-height: 330px;
+    object-fit: contain;
+  }
+
+  .intro .narrow {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: clamp(34px, 6vw, 80px);
+    align-items: center;
+  }
+
+  .intro .section-kicker,
+  .intro h2 {
+    grid-column: 1;
+  }
+
+  .intro p {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .intro h2 + p {
+    margin-block-start: 0;
+  }
+
+  .intro p + p {
+    margin-block-start: 16px;
+  }
+}
+
+/* Confianza institucional: más horizontal, menos bloque alto */
+@media (min-width: 981px) {
+  .trust-section {
+    padding-block: clamp(44px, 5vh, 66px);
+  }
+
+  .trust-head {
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, .55fr);
+    align-items: center;
+    margin-block-end: 24px;
+  }
+
+  .trust-head h2 {
+    font-size: clamp(2.35rem, 4.6vw, 4.35rem);
+  }
+
+  .trust-logos li {
+    min-height: 76px;
+  }
+
+  .trust-note {
+    text-align: center;
+  }
+}
+
+/* Qué hacemos: más ancho visual y tarjetas compactas */
+@media (min-width: 981px) {
+  .split-grid {
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    align-items: center;
+  }
+
+  .feature-list {
+    gap: 14px;
+  }
+
+  .feature-item {
+    padding: 20px 22px;
+  }
+}
+
+/* Servicios: que entren como vitrina de una pantalla en escritorio */
+@media (min-width: 981px) {
+  .services .section-head {
+    max-width: 1120px;
+    margin-block-end: 24px;
+  }
+
+  .services .section-head h2 {
+    font-size: clamp(2.35rem, 4.5vw, 4.1rem);
+  }
+
+  .services .section-head p {
+    max-width: 900px;
+    margin-block-end: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .product-card {
+    padding: 22px;
+  }
+
+  .product-card h3 {
+    font-size: clamp(1.08rem, 1.3vw, 1.28rem);
+  }
+
+  .product-card p,
+  .product-card li {
+    font-size: .94rem;
+    line-height: 1.45;
+  }
+
+  .product-card .service-meta {
+    padding-top: 14px;
+  }
+
+  .services-note {
+    margin-block-start: 18px;
+    padding: 18px 22px;
+  }
+}
+
+/* Método: una pantalla completa, no tres bloques apilados */
+.method-panel {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  grid-template-areas:
+    "copy process"
+    "close close";
+  gap: clamp(24px, 4.5vw, 64px);
+  align-items: center;
+}
+
+.method-copy {
+  grid-area: copy;
+}
+
+.process-panel {
+  grid-area: process;
+}
+
+.method-panel .method-close {
+  grid-area: close;
+  margin: 0;
+  padding: 16px 18px;
+  color: rgba(255, 255, 255, .88) !important;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: var(--radius);
+}
+
+.method-panel .compass-grid {
+  margin-block-start: 24px;
+}
+
+.method-panel .compass-card {
+  padding: 18px;
+}
+
+.method-panel .compass-card p,
+.method-panel .steps span {
+  line-height: 1.42;
+}
+
+.method-panel .section-head.compact {
+  margin: 0 0 18px;
+}
+
+.method-panel .steps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.method-panel .steps li {
+  min-height: 92px;
+  padding: 18px 18px 18px 58px;
+}
+
+.method-panel .steps li::before {
+  left: 18px;
+  top: 18px;
+}
+
+.source-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: 16px;
+}
+
+.source-strip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 11px;
+  color: rgba(255, 255, 255, .86);
+  background: rgba(255, 255, 255, .09);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .04em;
+}
+
+/* Lo que no hacemos: 3x2 equilibrado */
+@media (min-width: 981px) {
+  .principles .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, .75fr) minmax(0, .95fr);
+    gap: clamp(24px, 5vw, 64px);
+    align-items: end;
+    max-width: none;
+    margin-block-end: 24px;
+  }
+
+  .principles .section-head .section-kicker,
+  .principles .section-head h2 {
+    grid-column: 1;
+  }
+
+  .principles .section-head p {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .principles .cards-grid {
+    gap: 14px;
+  }
+
+  .principles .service-card {
+    min-height: 168px;
+    padding: 20px;
+  }
+
+  .principles .service-card h3 {
+    font-size: 1.08rem;
+  }
+
+  .principles .service-card p {
+    font-size: .94rem;
+    line-height: 1.45;
+  }
+
+  .orientation-box.wide {
+    max-width: none;
+    margin-block-start: 18px;
+  }
+}
+
+/* Observatorio: contenido y lead magnet en una pantalla */
+.observatory-panel {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(26px, 5vw, 68px);
+  align-items: center;
+}
+
+.observatory-copy h2 {
+  font-size: clamp(2.25rem, 4.4vw, 4.15rem);
+}
+
+.observatory-copy > p {
+  color: var(--color-muted);
+  font-size: 1.04rem;
+}
+
+.observatory-panel .category-list {
+  margin: 22px 0 0;
+}
+
+.compact-articles {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.compact-articles .article-card {
+  min-height: 190px;
+  padding: 20px;
+}
+
+.compact-articles .article-card span {
+  margin-bottom: 12px;
+}
+
+.compact-articles .article-card h3 {
+  font-size: 1.08rem;
+}
+
+.compact-articles .article-card p {
+  font-size: .94rem;
+  line-height: 1.45;
+}
+
+.compact-lead {
+  grid-template-columns: minmax(0, .95fr) minmax(250px, .78fr);
+  gap: 18px;
+  margin-block-start: 24px;
+  padding: 20px;
+}
+
+.compact-lead .lead-magnet-content h3 {
+  font-size: clamp(1.6rem, 2.2vw, 2.15rem);
+  margin-bottom: 8px;
+}
+
+.compact-lead .lead-magnet-content p {
+  font-size: .94rem;
+  line-height: 1.45;
+}
+
+.compact-lead .lead-form {
+  gap: 10px;
+  padding: 16px;
+}
+
+.compact-lead .lead-form input {
+  min-height: 40px;
+  padding: 9px 11px;
+}
+
+.compact-lead .lead-consent {
+  font-size: .78rem;
+}
+
+.compact-lead .button {
+  min-height: 42px;
+}
+
+/* Equipo y contacto más armónicos en una pantalla */
+@media (min-width: 981px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, .55fr);
+    align-items: center;
+  }
+
+  .about-grid h2 {
+    font-size: clamp(2.35rem, 4.6vw, 4.25rem);
+  }
+
+  .about-grid > div > p {
+    max-width: 880px;
+  }
+
+  .team-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .team-list article {
+    padding: 18px;
+  }
+
+  .team-list p {
+    font-size: .94rem;
+    line-height: 1.45;
+  }
+
+  .quote-card blockquote {
+    font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+  }
+
+  .contact-grid {
+    grid-template-columns: minmax(0, .7fr) minmax(520px, 1.18fr);
+    align-items: center;
+    gap: clamp(28px, 5vw, 70px);
+  }
+
+  .contact-grid h2 {
+    font-size: clamp(2.35rem, 4.5vw, 4.2rem);
+  }
+
+  .contact-form {
+    gap: 10px;
+    padding: 22px;
+  }
+
+  .contact-form .form-row {
+    gap: 6px;
+  }
+
+  .contact-form label {
+    font-size: .82rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    min-height: 40px;
+    padding: 9px 11px;
+    border-radius: 12px;
+    font-size: .92rem;
+  }
+
+  .contact-form textarea {
+    min-height: 86px;
+  }
+
+  .contact-form .button {
+    min-height: 42px;
+  }
+
+  .form-note,
+  .form-status {
+    font-size: .8rem;
+    line-height: 1.35;
+  }
+}
+
+/* Pantallas bajas: evitar cortes. Mejor scroll natural que contenido perdido. */
+@media (max-height: 719px) and (min-width: 981px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .section {
+    min-height: auto;
+    padding-block: 64px;
+  }
+
+  .method-panel,
+  .observatory-panel {
+    align-items: start;
+  }
+}
+
+/* Tablet y mobile: conservar legibilidad, sin forzar una pantalla */
+@media (max-width: 980px) {
+  .method-panel,
+  .observatory-panel {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  .method-copy,
+  .process-panel,
+  .method-panel .method-close {
+    grid-area: auto;
+  }
+
+  .method-panel .steps,
+  .compact-articles {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-lead {
+    grid-template-columns: 1fr;
+  }
+}
