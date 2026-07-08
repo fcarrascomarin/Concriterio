@@ -113,3 +113,16 @@ El formulario del manifiesto está preparado para Formspree. Para activar captur
    `assets/manifiesto-con-criterio.pdf`.
 
 Mientras no se reemplace el ID, el formulario valida correo y consentimiento, pero no almacena el lead en un servidor.
+
+## Ajuste visual v6 — secciones tipo pantalla
+
+Se incorporó una capa de UX para que la web se perciba como una experiencia one-page por bloques:
+
+- En escritorio y pantallas con altura suficiente, cada sección principal ocupa el alto visible y usa `scroll-snap-type: y proximity`.
+- Se compactaron las secciones de Método y Observatorio para que no queden títulos aislados al bajar.
+- El método se reorganizó en una sola pantalla: Brújula, proceso y fuentes de información.
+- El Observatorio se reorganizó en dos columnas: línea editorial + lead magnet y artículos destacados.
+- El formulario de contacto se compactó en escritorio para conservar lectura y conversión sin perder campos B2B.
+- En mobile y pantallas bajas se desactiva el comportamiento tipo pantalla para evitar cortes de contenido.
+
+Los cambios principales están en `index.html` y en el bloque final de `css/styles.css` bajo el encabezado `CON CRITERIO V6`.
