@@ -89,3 +89,27 @@ Si quieres recibir formularios sin depender del cliente de correo del usuario, r
 - `robots.txt`, `sitemap.xml`, `404.html`, `CNAME`, `.nojekyll`.
 - Sin frameworks ni dependencias externas.
 - Sin claves ni secretos en frontend.
+
+
+## Actualización UX / Conversión B2B
+
+Esta versión incorpora:
+
+- Header sticky dinámico con estado compacto al hacer scroll.
+- Sección de confianza institucional preparada para reemplazar marcadores por logos reales autorizados.
+- Lead magnet en Observatorio para descargar `assets/manifiesto-con-criterio.pdf`.
+- Formulario B2B ampliado para filtrar tipo de organización, cargo, región, interés y plazo.
+- Mejoras SEO con long-tail keywords orientadas a municipios y organizaciones territoriales.
+
+### Activar captura real de leads
+
+El formulario del manifiesto está preparado para Formspree. Para activar captura real:
+
+1. Crear un formulario en Formspree.
+2. Reemplazar en `index.html`:
+   `https://formspree.io/f/REEMPLAZAR_ID_FORM`
+   por el endpoint real.
+3. Mantener el PDF en:
+   `assets/manifiesto-con-criterio.pdf`.
+
+Mientras no se reemplace el ID, el formulario valida correo y consentimiento, pero no almacena el lead en un servidor.
