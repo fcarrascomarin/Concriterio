@@ -4,14 +4,15 @@ Base en **HTML + CSS + JS** para publicar en GitHub Pages y editar en Visual Stu
 
 ## Versión actual
 
-Esta versión ajusta la vitrina pública de Con Criterio al documento maestro del proyecto:
+Esta versión ajusta la vitrina pública de Con Criterio a la arquitectura definida en la conversación fundacional y sus actualizaciones recientes:
 
-- Hero más directo: menos ruido, más criterio, mejores decisiones.
-- Oferta pública reducida a tres servicios iniciales.
-- Método expresado como flujo operativo: delimitar, escuchar, distinguir, priorizar y proyectar.
-- Sección de equipo con Benjamín Sepúlveda y Francisca Carrasco.
-- Contacto orientado a reunión por servicio concreto.
-- Ajustes visuales para una presencia más sobria, institucional y menos decorativa.
+- Hero reposicionado desde “consultora de seguridad” hacia una brújula para decisiones complejas.
+- Tríada central visible: **evidencia, vínculo y contexto territorial**.
+- Servicios iniciales reformulados: formación aplicada, **Mapa Inicial Con Criterio®** y diagnóstico participativo con diseño de respuestas.
+- Método expresado como **Brújula Con Criterio** y proceso: encuadrar, escuchar, observar, contrastar, analizar y orientar.
+- Observatorio ampliado hacia seguridad, convivencia, justicia, territorio, confianza institucional y decisiones complejas.
+- Sección de equipo actualizada para presentar a Benjamín y Francisca como roles estructurales e interdisciplinarios.
+- Contacto orientado a conversaciones sobre problemas complejos, no solo a pedidos de servicios cerrados.
 
 ## Estructura
 
