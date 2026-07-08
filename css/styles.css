@@ -1272,3 +1272,66 @@ textarea:invalid:not(:focus):not(:placeholder-shown) {
     gap: 16px;
   }
 }
+
+/* =========================================================
+   CON CRITERIO V4 - BRÚJULA, OBSERVATORIO Y POSICIONAMIENTO
+========================================================= */
+
+.compass-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.compass-card {
+  padding: 22px;
+  color: var(--color-paper);
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--radius);
+}
+
+.compass-card h3 {
+  color: var(--color-paper);
+}
+
+.compass-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, .74);
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -10px 0 28px;
+}
+
+.category-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 13px;
+  color: var(--color-navy);
+  background: rgba(28, 31, 77, .07);
+  border: 1px solid rgba(28, 31, 77, .12);
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 850;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 760px) {
+  .compass-card {
+    padding: 20px;
+  }
+
+  .category-list {
+    margin-bottom: 22px;
+  }
+
+  .category-list span {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
