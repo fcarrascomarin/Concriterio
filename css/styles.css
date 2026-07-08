@@ -728,6 +728,14 @@ textarea:invalid:not(:focus):not(:placeholder-shown) {
   text-align: right;
 }
 
+.footer-credit {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, .56);
+  font-size: .82rem;
+  letter-spacing: .02em;
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .split-grid,
