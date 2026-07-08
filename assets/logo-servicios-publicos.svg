@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="70" viewBox="0 0 180 70" role="img" aria-label="Servicios Públicos">
+  <rect width="180" height="70" rx="12" fill="#ffffff"/>
+  <circle cx="35" cy="35" r="18" fill="none" stroke="#1c1f4d" stroke-width="2" opacity="0.72"/>
+  <path d="M35 21 L41 35 L35 49 L29 35 Z" fill="#a83232" opacity="0.78"/>
+  <text x="68" y="31" fill="#1c1f4d" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" text-anchor="start">
+    <tspan x="68" dy="0">Servicios
+Públicos</tspan>
+  </text>
+</svg>
