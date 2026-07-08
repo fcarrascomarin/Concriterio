@@ -1335,3 +1335,267 @@ textarea:invalid:not(:focus):not(:placeholder-shown) {
     text-align: center;
   }
 }
+
+
+/* =========================================================
+   CON CRITERIO V5 - UX, CONVERSIÓN Y SEO B2B
+========================================================= */
+
+/* Header dinámico / sticky compacto */
+.site-header {
+  --cc-nav-height: 74px;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow 220ms ease;
+}
+
+.nav-container {
+  min-height: var(--cc-nav-height);
+  transition:
+    min-height 240ms ease,
+    padding 240ms ease;
+}
+
+.site-header.is-scrolled {
+  --cc-nav-height: 58px;
+  background: rgba(255, 255, 255, .94);
+  border-bottom-color: rgba(16, 17, 36, .08);
+  box-shadow: 0 10px 32px rgba(16, 17, 36, .10);
+}
+
+.site-header .brand-mark,
+.site-header .brand-text strong,
+.site-header .brand-text span,
+.site-header .nav-menu a {
+  transition:
+    width 240ms ease,
+    height 240ms ease,
+    font-size 240ms ease,
+    min-height 240ms ease,
+    padding 240ms ease;
+}
+
+.site-header.is-scrolled .brand-mark {
+  width: 34px;
+  height: 34px;
+}
+
+.site-header.is-scrolled .brand-text span {
+  font-size: .74rem;
+  letter-spacing: .26em;
+}
+
+.site-header.is-scrolled .brand-text strong {
+  font-size: 1.32rem;
+}
+
+.site-header.is-scrolled .nav-menu a {
+  min-height: 36px;
+  padding-inline: 12px;
+}
+
+section[id],
+main [id] {
+  scroll-margin-top: 88px;
+}
+
+/* Confianza institucional / social proof preparado */
+.trust-section {
+  padding-block: clamp(46px, 6vw, 78px);
+  background: var(--color-paper);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.trust-head {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(280px, .7fr);
+  gap: clamp(24px, 5vw, 60px);
+  align-items: end;
+  margin-block-end: 28px;
+}
+
+.trust-head h2 {
+  max-width: 760px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.trust-head p:not(.section-kicker) {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.02rem;
+}
+
+.trust-logos {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust-logos li {
+  min-height: 84px;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(16, 17, 36, .05);
+}
+
+.trust-logos img {
+  max-height: 46px;
+  width: auto;
+  filter: grayscale(1);
+  opacity: .62;
+  transition: filter var(--transition), opacity var(--transition), transform var(--transition);
+}
+
+.trust-logos li:hover img {
+  filter: grayscale(.15);
+  opacity: .95;
+  transform: translateY(-1px);
+}
+
+.trust-note {
+  margin: 14px 0 0;
+  color: var(--color-muted);
+  font-size: .86rem;
+}
+
+/* Lead magnet Observatorio */
+.lead-magnet-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, .72fr);
+  gap: clamp(24px, 5vw, 52px);
+  align-items: center;
+  margin-block-start: 34px;
+  padding: clamp(24px, 5vw, 46px);
+  color: var(--color-paper);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(168, 50, 50, .42), transparent 30%),
+    var(--color-navy);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(16, 17, 36, .16);
+}
+
+.lead-magnet-content h3 {
+  margin: 0 0 16px;
+  color: var(--color-paper);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -.03em;
+}
+
+.lead-magnet-content p {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(255, 255, 255, .78);
+  font-size: 1.05rem;
+}
+
+.lead-magnet-content ul {
+  display: grid;
+  gap: 8px;
+  margin: 22px 0 0;
+  padding-left: 1.2rem;
+  color: rgba(255, 255, 255, .82);
+}
+
+.lead-form {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  background: rgba(255, 255, 255, .96);
+  color: var(--color-ink);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .18);
+}
+
+.lead-form .button {
+  width: 100%;
+}
+
+.lead-consent {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: var(--color-muted);
+  font-size: .86rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.lead-consent input {
+  width: 18px;
+  min-height: 18px;
+  margin-top: 2px;
+}
+
+.lead-form .form-status a,
+.contact-form .form-status a {
+  color: var(--color-red-dark);
+  font-weight: 900;
+}
+
+.optional-label {
+  color: var(--color-muted);
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .trust-head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .trust-logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .lead-magnet-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    --cc-nav-height: 68px;
+  }
+
+  .site-header.is-scrolled {
+    --cc-nav-height: 60px;
+  }
+
+  .nav-container {
+    min-height: var(--cc-nav-height);
+  }
+
+  .nav-menu {
+    inset: var(--cc-nav-height) 0 auto 0;
+    max-height: calc(100svh - var(--cc-nav-height));
+  }
+
+  section[id],
+  main [id] {
+    scroll-margin-top: 78px;
+  }
+
+  .trust-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-logos li {
+    min-height: 74px;
+    padding: 14px;
+  }
+}
