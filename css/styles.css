@@ -942,7 +942,7 @@ textarea:invalid:not(:focus):not(:placeholder-shown) {
   margin-block-start: 28px;
 }
 
-/* Observatorio */
+/* Bloques editoriales heredados no usados en la home pública */
 .status-badge {
   width: fit-content;
   margin-top: auto !important;
@@ -1475,7 +1475,7 @@ main [id] {
   font-size: .86rem;
 }
 
-/* Lead magnet Observatorio */
+/* Bloques de formulario heredados no usados en la home pública */
 .lead-magnet-card {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(300px, .72fr);
@@ -1944,7 +1944,7 @@ li,
   }
 }
 
-/* Observatorio: contenido y lead magnet en una pantalla */
+/* Ajustes heredados no usados en la home pública */
 .observatory-panel {
   display: grid;
   grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
