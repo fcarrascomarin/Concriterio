@@ -2,85 +2,42 @@
 
 Fecha: 16 de julio de 2026
 
-## Identidad
+## Estrategia y arquitectura
 
-- Se instala como eje principal: **Seguridad con evidencia, vínculo y territorio**.
-- Se mantiene el titular: “Cuando los problemas son complejos, responder rápido no basta. Hay que decidir con criterio”.
-- Se incorpora el origen institucional de la propuesta: una pausa útil para que la urgencia no piense sola.
-- La experiencia de Benjamín se transforma en criterio institucional, sin convertir la web en una marca personal.
-- Francisca aparece como parte estructural del proyecto desde operaciones, innovación e implementación.
+- La portada deja de contener toda la arquitectura interna y funciona como puerta comercial.
+- Menú reducido a: Qué hacemos, Servicios, Método, Equipo y Conversar.
+- Se crean páginas interiores para Servicios, Método y Equipo/Origen.
+- Se reduce la densidad y se eliminan repeticiones conceptuales.
 
-## Arquitectura comercial
+## Oferta
 
-Se reemplazó la oferta dispersa de seis entregables por tres servicios de entrada:
+- Se mantienen solo los tres servicios validados.
+- El Mapa Inicial aparece como servicio principal de entrada.
+- Cada servicio explica situación, actividades, entregables, duración, continuidad y límites.
 
-1. Taller Seguridad con Evidencia.
-2. Mapa Inicial de Seguridad y Convivencia.
-3. Diagnóstico Participativo y Cartera de Proyectos.
+## Marca y estética
 
-Los informes, mapas de actores, devoluciones y apoyos de implementación quedan como componentes posibles de esos servicios.
+- Sistema editorial institucional situado.
+- Mayor espacio, contraste jerárquico y variedad de composiciones.
+- Brújula visual propia, método como recorrido y situaciones como lista editorial.
+- Se reemplaza la repetición de tarjetas y numeraciones.
+- Se incluye imagen social Open Graph y gráfico territorial propio.
 
-## Contenido
+## Credibilidad
 
-La nueva página incorpora:
+- Ejemplos visuales de mapa de actores, matriz de evidencia y ruta inicial.
+- Equipo descrito con responsabilidades precisas.
+- Francisca: Dirección de Operaciones y Diseño de Sistemas.
+- Ámbitos de experiencia reorganizados sin encerrar la marca en el sistema penal.
 
-- por qué existe Con Criterio;
-- brújula de evidencia, vínculo y territorio;
-- tres líneas de trabajo;
-- sectores y contrapartes;
-- ocho situaciones abordables;
-- tres servicios de entrada;
-- método de seis acciones;
-- salvaguardas y límites;
-- origen desde el Biobío;
-- equipo;
-- primera conversación.
+## Conversión
 
-## Método
+- CTA principal: “Conversemos sobre una situación”.
+- Formulario AJAX real con FormSubmit, validación, honeypot y fallback por correo.
+- Campos para cargo, organización, situación, decisión y plazo.
 
-El método se actualizó a:
+## Técnica
 
-1. Encuadrar.
-2. Escuchar.
-3. Observar.
-4. Contrastar.
-5. Analizar.
-6. Orientar.
-
-## Diseño y experiencia
-
-- Hero más identitario y profesional.
-- Uso visual de la brújula como símbolo de orientación.
-- Secciones amplias, equilibradas y claramente diferenciadas.
-- Mayor presencia comercial de empresas y universidades sin perder municipalidades, servicios públicos y organizaciones sociales.
-- Navegación sticky que disminuye al hacer scroll.
-- Menú móvil de pantalla completa y accesible.
-- Indicador de sección activa.
-- Animaciones discretas con alternativa sin movimiento.
-- Diseño responsive sin desbordamiento horizontal.
-
-## Contacto
-
-- Formulario más breve y útil para una conversación B2B.
-- Pregunta por la situación y por la decisión que debe tomarse.
-- Confirmación obligatoria de no incluir información sensible.
-- El sitio mantiene un flujo `mailto:` y no almacena datos.
-
-## SEO y publicación
-
-- Título y descripción actualizados.
-- Metadatos Open Graph y Twitter.
-- Imagen social propia de 1200 × 630 px.
-- Datos estructurados básicos.
-- Sitemap actualizado.
-- Manifest y página 404 actualizados.
-- Se mantiene `CNAME` para `www.concriterio.cl`.
-
-## Control técnico realizado
-
-- HTML, IDs, etiquetas, enlaces y archivos referenciados validados.
-- JavaScript revisado sintácticamente.
-- Pruebas responsive en 320, 390, 768, 1024, 1280 y 1440 px.
-- Sin desplazamiento horizontal en los anchos probados.
-- Menú móvil probado, incluido cierre con tecla Escape.
-- Validación de campos obligatorios del formulario probada.
+- Diseño responsive para escritorio, tablet y móvil.
+- Menú accesible, foco visible, skip link y respeto por `prefers-reduced-motion`.
+- SEO por página, sitemap actualizado y metadatos sociales completos.

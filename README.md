@@ -1,55 +1,38 @@
-# Con Criterio — sitio comercial consolidado (julio 2026)
+# Con Criterio — sitio comercial actualizado (julio 2026)
 
-Sitio estático en **HTML, CSS y JavaScript** preparado para GitHub Pages y el dominio `www.concriterio.cl`.
+Sitio estático en HTML, CSS y JavaScript para GitHub Pages y `www.concriterio.cl`.
 
-Esta versión incorpora la identidad y arquitectura comercial consolidada del proyecto: **Seguridad con evidencia, vínculo y territorio**. La web ya no presenta una lista dispersa de entregables; organiza la propuesta alrededor de tres líneas, tres servicios de entrada, seis acciones metodológicas, salvaguardas éticas, equipo y una primera conversación.
+## Arquitectura
 
-## Arquitectura pública
+- `index.html`: portada comercial breve.
+- `servicios.html`: detalle de los tres servicios de entrada.
+- `metodo.html`: Brújula, seis acciones, herramientas y base metodológica.
+- `nosotros.html`: identidad, equipo, ámbitos de experiencia y origen en el Biobío.
+- `404.html`: página de error propia.
 
-1. Hero: promesa y posición.
-2. Por qué existe Con Criterio.
-3. Brújula: evidencia, vínculo y territorio.
-4. Tres líneas de trabajo.
-5. Situaciones abordables.
-6. Tres servicios de entrada.
-7. Método de seis acciones.
-8. Salvaguardas y límites.
-9. Origen desde el Biobío y equipo.
-10. Primera conversación.
+## Cambios principales
 
-## Servicios de entrada
+- Portada reducida y jerarquizada.
+- Menú simplificado a cinco destinos.
+- Mapa Inicial destacado como servicio principal.
+- Brújula convertida en recurso visual de marca.
+- Método presentado como recorrido, no como catálogo de tarjetas.
+- Cuatro situaciones abordables y cuatro salvaguardas esenciales.
+- Sección de prueba metodológica con ejemplos visuales.
+- Cargo de Francisca actualizado a Dirección de Operaciones y Diseño de Sistemas.
+- Sistema visual editorial institucional: azul profundo, marfil, verde apagado y cobre.
+- Imagen Open Graph real incluida.
+- Mejoras responsive, accesibilidad y SEO.
 
-- Taller Seguridad con Evidencia.
-- Mapa Inicial de Seguridad y Convivencia.
-- Diagnóstico Participativo y Cartera de Proyectos.
+## Formulario real
 
-Los informes, mapas de actores, devoluciones y apoyos de implementación se integran como componentes de estos servicios cuando corresponde, no como productos autónomos.
+El formulario usa el endpoint AJAX de FormSubmit para enviar a `contacto@concriterio.cl`.
 
-## Método
+**Activación inicial:** FormSubmit enviará un correo de confirmación a `contacto@concriterio.cl` la primera vez que se use el formulario en producción. Debe abrirse ese correo y activar el formulario. Hasta completar esa activación, los mensajes no llegarán normalmente.
 
-1. Encuadrar.
-2. Escuchar.
-3. Observar.
-4. Contrastar.
-5. Analizar.
-6. Orientar.
-
-## Características técnicas
-
-- Navegación sticky que se reduce al hacer scroll.
-- Menú móvil accesible y cerrable con Escape.
-- Indicador de sección activa.
-- Animaciones discretas con soporte para `prefers-reduced-motion`.
-- Diseño responsive para escritorio, tablet y móvil.
-- Metadatos SEO y Open Graph.
-- Enlaces canónicos, sitemap y robots.
-- Formulario de contacto sin backend, mediante `mailto:`.
-- Advertencia y confirmación para evitar datos sensibles.
-- Sin dependencias externas ni rastreadores.
+El formulario incluye validación, honeypot y fallback visible a correo directo. Se mantiene la advertencia de no ingresar información sensible.
 
 ## Probar localmente
-
-Desde la carpeta raíz:
 
 ```bash
 python -m http.server 8000
@@ -59,14 +42,18 @@ Abrir `http://localhost:8000`.
 
 ## Publicación en GitHub Pages
 
-1. Reemplazar el contenido del repositorio por los archivos de esta carpeta.
-2. Confirmar que `CNAME` contiene `www.concriterio.cl`.
-3. En GitHub, usar `Settings > Pages > Deploy from a branch`.
-4. Seleccionar rama `main` y carpeta `/root`.
-5. Limpiar caché del navegador o CDN tras el despliegue.
+1. Reemplazar el contenido del repositorio por estos archivos.
+2. Confirmar que `CNAME` mantiene `www.concriterio.cl`.
+3. Publicar desde la rama `main`, carpeta raíz.
+4. Limpiar caché del navegador o CDN.
+5. Realizar un envío de prueba y activar FormSubmit desde el correo recibido.
 
-## Formulario
+## Pendientes que requieren insumos externos
 
-El formulario prepara un correo a `contacto@concriterio.cl` desde la aplicación de correo del dispositivo. No almacena datos.
+- Sustituir monogramas por retratos profesionales cuando estén disponibles.
+- Conectar analítica solo después de elegir proveedor y política de privacidad.
+- Crear casos demostrables a medida que existan trabajos autorizados o anonimizados.
 
-Para captura directa futura se requerirá un endpoint externo o backend con medidas de privacidad y seguridad adecuadas.
+### Privacidad del formulario
+
+FormSubmit es un proveedor externo y declara retener los envíos durante 30 días. Por eso la interfaz exige no incluir antecedentes sensibles. Para una etapa con mayor volumen o información reservada, debe migrarse a un backend propio o a un proveedor contratado con política de tratamiento definida.

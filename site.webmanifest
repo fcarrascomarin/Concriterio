@@ -1,11 +1,11 @@
 {
   "name": "Con Criterio",
   "short_name": "Con Criterio",
-  "description": "Seguridad con evidencia, vínculo y territorio. Comprender problemas complejos antes de intervenir.",
-  "start_url": ".",
+  "description": "Seguridad con evidencia, vínculo y territorio. Comprender mejor para decidir mejor.",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#fbfaf7",
-  "theme_color": "#11142f",
+  "background_color": "#fcfbf8",
+  "theme_color": "#11162f",
   "icons": [
     {
       "src": "assets/favicon.svg",
