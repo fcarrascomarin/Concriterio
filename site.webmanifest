@@ -1,11 +1,11 @@
 {
   "name": "Con Criterio",
   "short_name": "Con Criterio",
-  "description": "Brújula metodológica para comprender problemas complejos de seguridad, convivencia y conflicto antes de decidir.",
+  "description": "Seguridad con evidencia, vínculo y territorio. Comprender problemas complejos antes de intervenir.",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#0f1026",
-  "theme_color": "#0f1026",
+  "background_color": "#fbfaf7",
+  "theme_color": "#11142f",
   "icons": [
     {
       "src": "assets/favicon.svg",

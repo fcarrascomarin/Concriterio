@@ -1,84 +1,72 @@
-# Con Criterio — web pública depurada
+# Con Criterio — sitio comercial consolidado (julio 2026)
 
-Sitio estático en **HTML + CSS + JS** para publicar en GitHub Pages.
+Sitio estático en **HTML, CSS y JavaScript** preparado para GitHub Pages y el dominio `www.concriterio.cl`.
 
-Esta versión deja la web como vitrina institucional sobria: muestra identidad, foco, método, entregables posibles, límites éticos, equipo y contacto. No expone comentarios internos, líneas futuras, manifiestos, observatorio ampliado, precios, pilotos ni arquitectura estratégica del proyecto.
+Esta versión incorpora la identidad y arquitectura comercial consolidada del proyecto: **Seguridad con evidencia, vínculo y territorio**. La web ya no presenta una lista dispersa de entregables; organiza la propuesta alrededor de tres líneas, tres servicios de entrada, seis acciones metodológicas, salvaguardas éticas, equipo y una primera conversación.
 
-## Estructura pública
+## Arquitectura pública
 
-La home queda ordenada así:
+1. Hero: promesa y posición.
+2. Por qué existe Con Criterio.
+3. Brújula: evidencia, vínculo y territorio.
+4. Tres líneas de trabajo.
+5. Situaciones abordables.
+6. Tres servicios de entrada.
+7. Método de seis acciones.
+8. Salvaguardas y límites.
+9. Origen desde el Biobío y equipo.
+10. Primera conversación.
 
-1. Inicio
-2. Qué es Con Criterio
-3. Para quiénes trabajamos
-4. Qué problemas ayudamos a ordenar
-5. Cómo trabajamos
-6. Qué podemos entregar
-7. Lo que no hacemos
-8. Equipo
-9. Contacto
+## Servicios de entrada
 
-## Principios de esta versión
+- Taller Seguridad con Evidencia.
+- Mapa Inicial de Seguridad y Convivencia.
+- Diagnóstico Participativo y Cartera de Proyectos.
 
-- Lenguaje profesional, claro y no academicista.
-- Foco transversal: municipalidades, empresas, universidades, colegios, servicios públicos, fundaciones, organizaciones sociales y comunidades.
-- Servicios presentados como posibilidades, no como catálogo rígido.
-- Sin duraciones, precios ni promesas sobredimensionadas en la web pública.
-- Sin Observatorio, manifiesto, publicaciones futuras ni marcadores de alianzas/logos.
-- Formulario breve para solicitar una primera conversación.
-- Advertencia visible para no ingresar datos sensibles ni antecedentes personales de terceros.
+Los informes, mapas de actores, devoluciones y apoyos de implementación se integran como componentes de estos servicios cuando corresponde, no como productos autónomos.
 
-## Archivos principales
+## Método
 
-```txt
-/
-├─ index.html
-├─ 404.html
-├─ CNAME
-├─ .nojekyll
-├─ robots.txt
-├─ sitemap.xml
-├─ site.webmanifest
-├─ assets/
-│  ├─ logo-concriterio-prototipo.png
-│  ├─ compass.svg
-│  └─ favicon.svg
-├─ css/
-│  └─ styles.css
-└─ js/
-   └─ main.js
-```
+1. Encuadrar.
+2. Escuchar.
+3. Observar.
+4. Contrastar.
+5. Analizar.
+6. Orientar.
 
-## Cómo probar localmente
+## Características técnicas
 
-Puedes abrir `index.html` directamente en el navegador. Para probar con servidor local:
+- Navegación sticky que se reduce al hacer scroll.
+- Menú móvil accesible y cerrable con Escape.
+- Indicador de sección activa.
+- Animaciones discretas con soporte para `prefers-reduced-motion`.
+- Diseño responsive para escritorio, tablet y móvil.
+- Metadatos SEO y Open Graph.
+- Enlaces canónicos, sitemap y robots.
+- Formulario de contacto sin backend, mediante `mailto:`.
+- Advertencia y confirmación para evitar datos sensibles.
+- Sin dependencias externas ni rastreadores.
+
+## Probar localmente
+
+Desde la carpeta raíz:
 
 ```bash
 python -m http.server 8000
 ```
 
-Luego abre:
-
-```txt
-http://localhost:8000
-```
+Abrir `http://localhost:8000`.
 
 ## Publicación en GitHub Pages
 
-1. Subir todos los archivos a la raíz del repositorio.
-2. En GitHub: `Settings > Pages`.
-3. Seleccionar `Deploy from a branch`.
-4. Rama: `main`; carpeta: `/root`.
-5. Guardar y esperar el despliegue.
-6. Verificar que el dominio use el archivo `CNAME` con `www.concriterio.cl`.
-7. Limpiar caché del navegador o CDN si la versión pública sigue mostrando la página anterior.
+1. Reemplazar el contenido del repositorio por los archivos de esta carpeta.
+2. Confirmar que `CNAME` contiene `www.concriterio.cl`.
+3. En GitHub, usar `Settings > Pages > Deploy from a branch`.
+4. Seleccionar rama `main` y carpeta `/root`.
+5. Limpiar caché del navegador o CDN tras el despliegue.
 
-## Formulario de contacto
+## Formulario
 
-El formulario no usa backend. Prepara un correo a:
+El formulario prepara un correo a `contacto@concriterio.cl` desde la aplicación de correo del dispositivo. No almacena datos.
 
-```txt
-contacto@concriterio.cl
-```
-
-Si más adelante se quiere captura directa de formularios, se puede integrar Formspree, Basin, Web3Forms, Cloudflare Worker o backend propio. Esa integración debe cuidar privacidad y no solicitar datos sensibles.
+Para captura directa futura se requerirá un endpoint externo o backend con medidas de privacidad y seguridad adecuadas.
