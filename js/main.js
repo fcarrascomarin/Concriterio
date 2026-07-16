@@ -1,119 +1,109 @@
-const header = document.querySelector("[data-header]");
-const toggle = document.querySelector(".nav-toggle");
-const menu = document.querySelector("[data-menu]");
-const year = document.querySelector("#year");
-const form = document.querySelector("#contact-form");
-const statusMessage = document.querySelector("#form-status");
-const navLinks = [...document.querySelectorAll('.nav-menu a[href^="#"]')];
-const revealItems = document.querySelectorAll(".reveal");
+const header = document.querySelector('[data-header]');
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.querySelector('[data-menu]');
+const year = document.querySelector('#year');
+const form = document.querySelector('#contact-form');
+const statusMessage = document.querySelector('#form-status');
+const revealItems = document.querySelectorAll('.reveal');
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+if (year) year.textContent = new Date().getFullYear();
 
-const updateHeaderOnScroll = () => {
+const updateHeader = () => {
   if (!header) return;
-  header.classList.toggle("is-scrolled", window.scrollY > 20);
+  header.classList.toggle('is-scrolled', window.scrollY > 18);
 };
 
 const closeMenu = () => {
   if (!toggle || !menu) return;
-  toggle.setAttribute("aria-expanded", "false");
-  toggle.setAttribute("aria-label", "Abrir menú");
-  menu.classList.remove("is-open");
-  document.body.classList.remove("menu-open");
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Abrir menú');
+  menu.classList.remove('is-open');
+  document.body.classList.remove('menu-open');
 };
 
 if (header) {
-  updateHeaderOnScroll();
-  window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 }
 
 if (toggle && menu) {
-  toggle.addEventListener("click", () => {
-    const willOpen = toggle.getAttribute("aria-expanded") !== "true";
-    toggle.setAttribute("aria-expanded", String(willOpen));
-    toggle.setAttribute("aria-label", willOpen ? "Cerrar menú" : "Abrir menú");
-    menu.classList.toggle("is-open", willOpen);
-    document.body.classList.toggle("menu-open", willOpen);
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    menu.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
   });
-
-  menu.addEventListener("click", (event) => {
+  menu.addEventListener('click', (event) => {
     if (event.target instanceof HTMLAnchorElement) closeMenu();
   });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
   });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1020) closeMenu();
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1080) closeMenu();
   });
 }
 
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
+const page = document.documentElement.dataset.page;
+if (page) {
+  const activeLink = document.querySelector(`[data-nav="${page}"]`);
+  if (activeLink) {
+    activeLink.classList.add('is-active');
+    activeLink.setAttribute('aria-current', 'page');
+  }
+}
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries, instance) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
+        entry.target.classList.add('is-visible');
+        instance.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -50px" });
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-
-  const sections = [...document.querySelectorAll("main section[id]")];
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      navLinks.forEach((link) => {
-        const isCurrent = link.getAttribute("href") === `#${entry.target.id}`;
-        link.classList.toggle("is-active", isCurrent);
-        if (isCurrent) link.setAttribute("aria-current", "true");
-        else link.removeAttribute("aria-current");
-      });
-    });
-  }, { threshold: 0.34, rootMargin: "-15% 0px -45%" });
-
-  sections.forEach((section) => sectionObserver.observe(section));
+  }, { threshold: 0.1, rootMargin: '0px 0px -45px' });
+  revealItems.forEach((item) => observer.observe(item));
 } else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
+  revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
 if (form && statusMessage) {
-  form.addEventListener("submit", (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    statusMessage.className = 'form-status';
 
     if (!form.checkValidity()) {
       form.reportValidity();
-      statusMessage.textContent = "Revisa los campos obligatorios antes de continuar.";
+      statusMessage.textContent = 'Revisa los campos obligatorios antes de enviar.';
+      statusMessage.classList.add('is-error');
       return;
     }
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    const subject = `Primera conversación Con Criterio - ${data.institution || "Nueva solicitud"}`;
+    const button = form.querySelector('button[type="submit"]');
+    const originalLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Enviando…';
+    statusMessage.textContent = 'Estamos enviando tu consulta.';
 
-    const body = [
-      "Solicitud de primera conversación desde concriterio.cl",
-      "",
-      `Nombre: ${data.name}`,
-      `Correo: ${data.email}`,
-      `Institución u organización: ${data.institution}`,
-      `Tipo de organización: ${data.organizationType}`,
-      "",
-      "Situación que necesitan comprender u ordenar:",
-      data.message,
-      "",
-      "Decisión que necesitan tomar:",
-      data.decision || "No informada",
-      "",
-      "La persona confirmó que no incluyó información sensible, reservada ni datos personales de terceros."
-    ].join("\n");
-
-    const mailtoUrl = `mailto:contacto@concriterio.cl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    statusMessage.textContent = "Se abrirá tu aplicación de correo para completar el envío. Si no se abre, escribe a contacto@concriterio.cl.";
-    window.location.href = mailtoUrl;
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === false) throw new Error('No se pudo completar el envío');
+      form.reset();
+      statusMessage.textContent = 'Gracias. Recibimos tu consulta y la revisaremos desde contacto@concriterio.cl.';
+      statusMessage.classList.add('is-success');
+    } catch (error) {
+      statusMessage.innerHTML = 'No fue posible enviar el formulario. Puedes escribir directamente a <a href="mailto:contacto@concriterio.cl">contacto@concriterio.cl</a>.';
+      statusMessage.classList.add('is-error');
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
   });
 }
