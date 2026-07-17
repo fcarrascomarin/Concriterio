@@ -54,3 +54,15 @@ Fecha: 16 de julio de 2026
 - Se incorporó realmente `assets/og-concriterio.png`, que estaba declarado en los metadatos pero no existía en el proyecto.
 - Se verificaron las cuatro páginas en anchos de 360, 390, 768, 1024, 1366 y 1440 píxeles, sin desbordamiento horizontal.
 - La extensión de la portada se redujo aproximadamente un 21% en portátil y un 25% en móvil respecto de la versión recibida.
+
+
+## Actualización comercial y técnica · 17 de julio de 2026
+
+- Se incorporaron situaciones más reconocibles para empresas, instituciones educativas y organizaciones con presencia territorial.
+- Se reemplazó el texto defensivo de la sección de herramientas y se identificaron las visualizaciones como muestras ilustrativas.
+- Se delimitó el Taller Seguridad con Evidencia: sesión de 2 a 3 horas, modalidad presencial o remota, equipo acotado, preparación y síntesis.
+- Se acotó el Diagnóstico Participativo mediante etapas, productos y fechas de devolución acordadas.
+- Se añadió el proceso comercial posterior al contacto: conversación inicial, evaluación de pertinencia y propuesta de trabajo.
+- Se creó `privacidad.html` y se enlazó desde el formulario y todos los pies de página.
+- Se reforzaron credenciales profesionales del equipo sin inventar clientes ni testimonios.
+- Se actualizó el sitemap, metadatos de versión y estilos responsive asociados.

@@ -5,11 +5,12 @@
 1. Reemplazar en el repositorio los archivos de la versión anterior por esta carpeta.
 2. Mantener `CNAME` con el valor `www.concriterio.cl`.
 3. Publicar desde la rama `main` y la carpeta raíz en GitHub Pages.
-4. Revisar en escritorio y teléfono que las cuatro páginas carguen:
+4. Revisar en escritorio y teléfono que las cinco páginas carguen:
    - `/`
    - `/servicios.html`
    - `/metodo.html`
    - `/nosotros.html`
+   - `/privacidad.html`
 
 ## 2. Activar el formulario
 
@@ -25,7 +26,7 @@ La primera utilización provoca el correo de confirmación. Mientras no se activ
 
 ## 3. Consideración de privacidad
 
-El formulario prohíbe incluir información sensible o datos personales de terceros. FormSubmit es un proveedor externo y declara retener los envíos durante 30 días. Para una etapa posterior, especialmente si la web comenzara a recibir antecedentes reservados, conviene reemplazarlo por un backend propio o un proveedor contratado con política de tratamiento definida.
+El formulario prohíbe incluir información sensible o datos personales de terceros. FormSubmit es un proveedor técnico externo. Para una etapa posterior, especialmente si la web comenzara a recibir antecedentes reservados, conviene reemplazarlo por un backend propio o un proveedor contratado con condiciones de tratamiento revisadas y documentadas.
 
 ## 4. Controles finales
 
@@ -45,6 +46,7 @@ Archivos que deben quedar directamente en la raíz:
 - `servicios.html`
 - `metodo.html`
 - `nosotros.html`
+- `privacidad.html`
 - `404.html`
 - carpetas `css`, `js` y `assets`
 - `CNAME`, `robots.txt`, `sitemap.xml` y `site.webmanifest`
@@ -55,6 +57,6 @@ Después del despliegue:
 2. Abrir el sitio en una ventana privada.
 3. Verificar que el menú diga: **Qué hacemos, Servicios, Método, Equipo y Conversar**.
 4. Hacer una recarga forzada si todavía aparece el diseño anterior (`Ctrl + F5` en Windows o `Cmd + Shift + R` en macOS).
-5. Comprobar que el código fuente carga `css/styles.css?v=20260717-compact-1`.
+5. Comprobar que el código fuente carga `css/styles.css?v=20260717-commercial-2`.
 
 El parámetro de versión evita que el navegador reutilice la hoja CSS anterior.
