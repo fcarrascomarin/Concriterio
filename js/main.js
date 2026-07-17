@@ -1,3 +1,9 @@
+// Normaliza la URL principal cuando el hosting expone /index.html.
+if (window.location.pathname.endsWith('/index.html')) {
+  const cleanPath = window.location.pathname.replace(/index\.html$/, '');
+  window.history.replaceState(null, '', `${cleanPath}${window.location.search}${window.location.hash}`);
+}
+
 const header = document.querySelector('[data-header]');
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.querySelector('[data-menu]');
