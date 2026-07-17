@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 500" role="img" aria-labelledby="title desc">
+  <title id="title">Representación territorial del Biobío</title>
+  <desc id="desc">Composición abstracta con costa, río, caminos y puntos de conexión.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3eee4"/>
+      <stop offset="1" stop-color="#e4e9e2"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cbd4d5"/>
+      <stop offset="1" stop-color="#aab9ba"/>
+    </linearGradient>
+  </defs>
+  <rect width="620" height="500" fill="url(#bg)"/>
+  <path d="M0 0h142c-18 64-12 109 9 156 19 43 17 92-8 145-22 47-32 115-16 199H0z" fill="url(#water)" opacity=".92"/>
+  <path d="M128 0c-18 67-7 116 13 160 22 49 12 98-11 143-25 49-31 113-14 197" fill="none" stroke="#65766b" stroke-width="3" opacity=".72"/>
+  <path d="M92 365c95-15 169-52 223-111 58-63 118-89 220-98" fill="none" stroke="#a56347" stroke-width="4" stroke-linecap="round" opacity=".64"/>
+  <path d="M166 92c69 39 118 80 148 126 34 51 81 86 173 116" fill="none" stroke="#11162f" stroke-width="2" stroke-dasharray="7 10" opacity=".34"/>
+  <path d="M180 420c42-93 83-145 139-185 51-37 98-89 130-170" fill="none" stroke="#65766b" stroke-width="2" opacity=".5"/>
+  <g fill="#11162f">
+    <circle cx="210" cy="110" r="8"/><circle cx="316" cy="248" r="11"/><circle cx="455" cy="151" r="7"/><circle cx="492" cy="335" r="9"/><circle cx="221" cy="389" r="7"/>
+  </g>
+  <g fill="none" stroke="#11162f" opacity=".13">
+    <circle cx="316" cy="248" r="42"/><circle cx="316" cy="248" r="84"/><circle cx="316" cy="248" r="126"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="13" fill="#5a5e69">
+    <text x="226" y="102">territorio</text>
+    <text x="332" y="241">vínculo</text>
+    <text x="470" y="143">evidencia</text>
+  </g>
+</svg>
