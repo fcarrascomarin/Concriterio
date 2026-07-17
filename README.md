@@ -57,3 +57,9 @@ Abrir `http://localhost:8000`.
 ### Privacidad del formulario
 
 FormSubmit es un proveedor externo y declara retener los envíos durante 30 días. Por eso la interfaz exige no incluir antecedentes sensibles. Para una etapa con mayor volumen o información reservada, debe migrarse a un backend propio o a un proveedor contratado con política de tratamiento definida.
+
+## Revisión responsive posterior
+
+La revisión posterior corrigió la causa de la extensión anormal en tablet y móvil: una regla general de grilla aparecía después de los breakpoints y volvía a crear dos columnas. Esto dejaba columnas de pocos píxeles, forzaba saltos de línea palabra por palabra y multiplicaba la altura de varias secciones.
+
+También se añadió cache-busting a CSS y JavaScript, se incorporaron los recursos territoriales y sociales faltantes y se validó el sitio sin desbordamiento horizontal entre 360 y 1440 px.

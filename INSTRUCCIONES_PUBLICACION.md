@@ -34,3 +34,27 @@ El formulario prohíbe incluir información sensible o datos personales de terce
 - Revisar que la imagen social aparezca al compartir la web.
 - Limpiar caché después del despliegue.
 - No agregar todavía analítica, cookies o rastreadores sin definir proveedor y aviso de privacidad.
+
+## 5. Evitar que continúe apareciendo la versión antigua
+
+La versión publicada debe reemplazarse desde la **raíz real del repositorio**. No subir una carpeta `Concriterio-main` dentro de otra carpeta ni dejar el `index.html` anterior en la raíz.
+
+Archivos que deben quedar directamente en la raíz:
+
+- `index.html`
+- `servicios.html`
+- `metodo.html`
+- `nosotros.html`
+- `404.html`
+- carpetas `css`, `js` y `assets`
+- `CNAME`, `robots.txt`, `sitemap.xml` y `site.webmanifest`
+
+Después del despliegue:
+
+1. Esperar a que GitHub Pages termine la publicación.
+2. Abrir el sitio en una ventana privada.
+3. Verificar que el menú diga: **Qué hacemos, Servicios, Método, Equipo y Conversar**.
+4. Hacer una recarga forzada si todavía aparece el diseño anterior (`Ctrl + F5` en Windows o `Cmd + Shift + R` en macOS).
+5. Comprobar que el código fuente carga `css/styles.css?v=20260717-compact-1`.
+
+El parámetro de versión evita que el navegador reutilice la hoja CSS anterior.
