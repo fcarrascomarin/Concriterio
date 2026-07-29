@@ -1,4 +1,4 @@
-// Normaliza la URL principal cuando el hosting expone /index.html.
+// Con Criterio 1.0 — comportamiento común del sitio.
 if (window.location.pathname.endsWith('/index.html')) {
   const cleanPath = window.location.pathname.replace(/index\.html$/, '');
   window.history.replaceState(null, '', `${cleanPath}${window.location.search}${window.location.hash}`);
@@ -16,15 +16,25 @@ if (year) year.textContent = new Date().getFullYear();
 
 const updateHeader = () => {
   if (!header) return;
-  header.classList.toggle('is-scrolled', window.scrollY > 18);
+  header.classList.toggle('is-scrolled', window.scrollY > 16);
 };
 
-const closeMenu = () => {
+const closeMenu = ({ returnFocus = false } = {}) => {
   if (!toggle || !menu) return;
+  const wasOpen = toggle.getAttribute('aria-expanded') === 'true';
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-label', 'Abrir menú');
   menu.classList.remove('is-open');
   document.body.classList.remove('menu-open');
+  if (returnFocus && wasOpen) toggle.focus();
+};
+
+const openMenu = () => {
+  if (!toggle || !menu) return;
+  toggle.setAttribute('aria-expanded', 'true');
+  toggle.setAttribute('aria-label', 'Cerrar menú');
+  menu.classList.add('is-open');
+  document.body.classList.add('menu-open');
 };
 
 if (header) {
@@ -34,21 +44,27 @@ if (header) {
 
 if (toggle && menu) {
   toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    menu.classList.toggle('is-open', open);
-    document.body.classList.toggle('menu-open', open);
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    if (isOpen) closeMenu();
+    else openMenu();
   });
+
   menu.addEventListener('click', (event) => {
-    if (event.target instanceof HTMLAnchorElement) closeMenu();
+    if (event.target.closest('a')) closeMenu();
   });
+
+  document.addEventListener('click', (event) => {
+    if (toggle.getAttribute('aria-expanded') !== 'true') return;
+    if (header && !header.contains(event.target)) closeMenu();
+  });
+
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeMenu();
+    if (event.key === 'Escape') closeMenu({ returnFocus: true });
   });
+
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1080) closeMenu();
-  });
+  }, { passive: true });
 }
 
 const page = document.documentElement.dataset.page;
@@ -63,12 +79,12 @@ if (page) {
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries, instance) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        instance.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      instance.unobserve(entry.target);
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -45px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px' });
+
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add('is-visible'));
@@ -87,9 +103,11 @@ if (form && statusMessage) {
     }
 
     const button = form.querySelector('button[type="submit"]');
-    const originalLabel = button.textContent;
-    button.disabled = true;
-    button.textContent = 'Enviando…';
+    const originalLabel = button?.textContent ?? 'Enviar consulta';
+    if (button) {
+      button.disabled = true;
+      button.textContent = 'Enviando…';
+    }
     statusMessage.textContent = 'Estamos enviando tu consulta.';
 
     try {
@@ -104,12 +122,14 @@ if (form && statusMessage) {
       form.reset();
       statusMessage.textContent = 'Gracias. Recibimos tu consulta y la revisaremos desde contacto@concriterio.cl.';
       statusMessage.classList.add('is-success');
-    } catch (error) {
+    } catch {
       statusMessage.innerHTML = 'No fue posible enviar el formulario. Puedes escribir directamente a <a href="mailto:contacto@concriterio.cl">contacto@concriterio.cl</a>.';
       statusMessage.classList.add('is-error');
     } finally {
-      button.disabled = false;
-      button.textContent = originalLabel;
+      if (button) {
+        button.disabled = false;
+        button.textContent = originalLabel;
+      }
     }
   });
 }
