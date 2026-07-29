@@ -1,68 +1,52 @@
-# Cambios realizados — Con Criterio
+# Cambios realizados — Con Criterio 1.0
 
-Fecha: 16 de julio de 2026
+Fecha: 29 de julio de 2026
 
-## Estrategia y arquitectura
+## Reposicionamiento
 
-- La portada deja de contener toda la arquitectura interna y funciona como puerta comercial.
-- Menú reducido a: Qué hacemos, Servicios, Método, Equipo y Conversar.
-- Se crean páginas interiores para Servicios, Método y Equipo/Origen.
-- Se reduce la densidad y se eliminan repeticiones conceptuales.
+- Se reemplazó la identidad pública anterior centrada en “Seguridad con evidencia, vínculo y territorio”.
+- Con Criterio se presenta ahora como **firma independiente de investigación aplicada y respuesta institucional**.
+- Se instala como principio rector **“Comprender antes de intervenir”**.
+- La propuesta de valor se organiza en **Claridad para comprender · Criterio para decidir · Ruta para responder**.
+- La portada comienza por la situación del cliente: decisión importante + información incompleta + costo de actuar mal + costo de esperar.
 
 ## Oferta
 
-- Se mantienen solo los tres servicios validados.
-- El Mapa Inicial aparece como servicio principal de entrada.
-- Cada servicio explica situación, actividades, entregables, duración, continuidad y límites.
+Se reemplazó la arquitectura anterior por los tres productos vigentes:
 
-## Marca y estética
+1. Taller de Criterio Aplicado.
+2. Mapa de Respuesta Institucional.
+3. Mesa de Criterio.
 
-- Sistema editorial institucional situado.
-- Mayor espacio, contraste jerárquico y variedad de composiciones.
-- Brújula visual propia, método como recorrido y situaciones como lista editorial.
-- Se reemplaza la repetición de tarjetas y numeraciones.
-- Se incluye imagen social Open Graph y gráfico territorial propio.
+No se presenta un servicio obligatorio de entrada. El sitio explica qué necesidad corresponde a cada producto y cuándo debe intervenir otra especialidad.
 
-## Credibilidad
+## Método e identidad
 
-- Ejemplos visuales de mapa de actores, matriz de evidencia y ruta inicial.
-- Equipo descrito con responsabilidades precisas.
-- Francisca: Dirección de Operaciones y Diseño de Sistemas.
-- Ámbitos de experiencia reorganizados sin encerrar la marca en el sistema penal.
+- Se incorporó el marco **Situación + Respuesta Institucional + Capacidad Institucional**.
+- Se mantiene el método: Encuadrar → Escuchar → Observar → Contrastar → Analizar → Orientar.
+- Se incorporó la distinción de evidencia: suficientemente establecido / plausible pero incompleto / no determinado.
+- Se reforzó la regla **“Con Criterio integra; no suplanta”**.
+- Se actualizó la sección de independencia para dejar claro que el cliente no compra las conclusiones.
+- La dirección profesional e intelectual queda atribuida a Benjamín Sepúlveda; Metamorfosis/Francisca y especialistas aparecen como apoyos según el encargo, no como codirección sustantiva automática.
 
-## Conversión
+## Diseño y navegación
 
-- CTA principal: “Conversemos sobre una situación”.
-- Formulario AJAX real con FormSubmit, validación, honeypot y fallback por correo.
-- Campos para cargo, organización, situación, decisión y plazo.
+- Se conservó la identidad visual editorial (azul profundo, marfil, cobre y verde), pero se reconstruyó la arquitectura de todas las páginas principales.
+- Se redujo densidad vertical en escritorio para que las secciones narrativas principales quepan en una pantalla habitual.
+- En tablet/móvil se utiliza flujo natural para impedir recortes.
+- Se rehízo el menú móvil: panel opaco bajo el header, sin superposición con la marca, scroll bloqueado al abrir y cierre accesible.
+- Se verificó ausencia de desbordamiento horizontal en 360, 390, 768, 1024, 1366 y 1440 px.
 
-## Técnica
+## Conversión y privacidad
 
-- Diseño responsive para escritorio, tablet y móvil.
-- Menú accesible, foco visible, skip link y respeto por `prefers-reduced-motion`.
-- SEO por página, sitemap actualizado y metadatos sociales completos.
+- CTA principal: **“Conversemos sobre una situación”**.
+- El formulario se simplificó y actualizó al nuevo lenguaje de la firma.
+- Se mantiene advertencia expresa de no ingresar información sensible.
+- Se actualizó `privacidad.html` al 29 de julio de 2026.
 
-## Corrección responsive y de carga CSS — revisión posterior
+## SEO y activos
 
-- Se corrigió una colisión de precedencia en CSS: las reglas generales de grilla estaban reabriendo columnas múltiples después de los breakpoints, lo que estrechaba el texto y multiplicaba la altura de la portada en pantallas pequeñas.
-- Se redujeron títulos, separaciones, alturas mínimas y tarjetas para evitar una página artificialmente extendida.
-- El hero ahora cabe en una pantalla habitual de escritorio, tablet y teléfono, con una composición específica para móviles pequeños.
-- La muestra de herramientas se transforma en un carrusel horizontal táctil en móvil, evitando una pila vertical excesiva.
-- Se añadieron límites de ancho y `min-width: 0` a los contenedores de grilla para impedir desbordamientos.
-- Se agregó versionado a `styles.css` y `main.js` para forzar la actualización después de publicar y evitar que el navegador conserve la hoja anterior.
-- Se incorporó el archivo faltante `assets/territory.svg`, que provocaba una imagen rota en la portada y en la página de equipo.
-- Se incorporó realmente `assets/og-concriterio.png`, que estaba declarado en los metadatos pero no existía en el proyecto.
-- Se verificaron las cuatro páginas en anchos de 360, 390, 768, 1024, 1366 y 1440 píxeles, sin desbordamiento horizontal.
-- La extensión de la portada se redujo aproximadamente un 21% en portátil y un 25% en móvil respecto de la versión recibida.
-
-
-## Actualización comercial y técnica · 17 de julio de 2026
-
-- Se incorporaron situaciones más reconocibles para empresas, instituciones educativas y organizaciones con presencia territorial.
-- Se reemplazó el texto defensivo de la sección de herramientas y se identificaron las visualizaciones como muestras ilustrativas.
-- Se delimitó el Taller Seguridad con Evidencia: sesión de 2 a 3 horas, modalidad presencial o remota, equipo acotado, preparación y síntesis.
-- Se acotó el Diagnóstico Participativo mediante etapas, productos y fechas de devolución acordadas.
-- Se añadió el proceso comercial posterior al contacto: conversación inicial, evaluación de pertinencia y propuesta de trabajo.
-- Se creó `privacidad.html` y se enlazó desde el formulario y todos los pies de página.
-- Se reforzaron credenciales profesionales del equipo sin inventar clientes ni testimonios.
-- Se actualizó el sitemap, metadatos de versión y estilos responsive asociados.
+- Se reescribieron title, descriptions, Open Graph, Twitter y JSON-LD.
+- Se actualizó `site.webmanifest` y `sitemap.xml`.
+- Se reemplazó la imagen `assets/og-concriterio.png` para eliminar la identidad anterior.
+- Se actualizó la versión de caché a `20260729-cc1`.

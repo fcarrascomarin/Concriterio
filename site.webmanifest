@@ -1,16 +1,10 @@
 {
   "name": "Con Criterio",
   "short_name": "Con Criterio",
-  "description": "Seguridad con evidencia, vínculo y territorio. Comprender mejor para decidir mejor.",
+  "description": "Firma independiente de investigación aplicada y respuesta institucional. Comprender antes de intervenir.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#fcfbf8",
   "theme_color": "#11162f",
-  "icons": [
-    {
-      "src": "assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ]
+  "icons": [{"src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml"}]
 }

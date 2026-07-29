@@ -1,36 +1,33 @@
-# Con Criterio — sitio comercial actualizado (julio 2026)
+# Con Criterio 1.0 — sitio comercial
 
-Sitio estático en HTML, CSS y JavaScript para GitHub Pages y `www.concriterio.cl`.
+Sitio estático en HTML, CSS y JavaScript preparado para GitHub Pages y `www.concriterio.cl`.
 
-## Arquitectura
+## Arquitectura pública
 
-- `index.html`: portada comercial breve.
-- `servicios.html`: detalle de los tres servicios de entrada.
-- `metodo.html`: Brújula, seis acciones, herramientas y base metodológica.
-- `nosotros.html`: identidad, equipo, ámbitos de experiencia y origen en el Biobío.
+- `index.html`: propuesta de valor, situaciones reconocibles, marco de análisis, tres servicios, método, independencia, dirección y contacto.
+- `servicios.html`: Taller de Criterio Aplicado, Mapa de Respuesta Institucional y Mesa de Criterio.
+- `metodo.html`: marco Situación + Respuesta Institucional + Capacidad Institucional, seis acciones y disciplina de evidencia.
+- `nosotros.html`: dirección, modelo de trabajo, principios y origen en el Biobío.
+- `privacidad.html`: aviso asociado al formulario.
 - `404.html`: página de error propia.
 
-## Cambios principales
+## Criterios técnicos
 
-- Portada reducida y jerarquizada.
-- Menú simplificado a cinco destinos.
-- Mapa Inicial destacado como servicio principal.
-- Brújula convertida en recurso visual de marca.
-- Método presentado como recorrido, no como catálogo de tarjetas.
-- Cuatro situaciones abordables y cuatro salvaguardas esenciales.
-- Sección de prueba metodológica con ejemplos visuales.
-- Cargo de Francisca actualizado a Dirección de Operaciones y Diseño de Sistemas.
-- Sistema visual editorial institucional: azul profundo, marfil, verde apagado y cobre.
-- Imagen Open Graph real incluida.
-- Mejoras responsive, accesibilidad y SEO.
+- Sin frameworks ni dependencias externas de interfaz.
+- HTML semántico, foco visible, skip link y respeto por `prefers-reduced-motion`.
+- Menú móvil desplegable bajo el encabezado, con fondo opaco, bloqueo de scroll y cierre por enlace, clic externo o tecla `Escape`.
+- Sin desbordamiento horizontal en los anchos validados entre 360 y 1440 px.
+- En escritorio (1366×768 y 1440×900), las secciones narrativas con clase `screen-section` están dimensionadas para caber dentro de una navegación de una pantalla sin recortar contenido.
+- En tablet y móvil se desactiva deliberadamente la altura de pantalla completa para priorizar lectura natural y evitar superposiciones o contenido recortado.
+- CSS y JS versionados con `?v=20260729-cc1` para invalidar caché tras la publicación.
 
-## Formulario real
+## Formulario
 
 El formulario usa el endpoint AJAX de FormSubmit para enviar a `contacto@concriterio.cl`.
 
-**Activación inicial:** FormSubmit enviará un correo de confirmación a `contacto@concriterio.cl` la primera vez que se use el formulario en producción. Debe abrirse ese correo y activar el formulario. Hasta completar esa activación, los mensajes no llegarán normalmente.
+La primera vez que se utilice en producción, FormSubmit puede enviar un correo de confirmación a esa cuenta. El formulario incorpora validación nativa, honeypot, estado accesible y fallback a correo directo.
 
-El formulario incluye validación, honeypot y fallback visible a correo directo. Se mantiene la advertencia de no ingresar información sensible.
+No deben ingresarse antecedentes sensibles, reservados ni datos personales de terceros.
 
 ## Probar localmente
 
@@ -40,26 +37,14 @@ python -m http.server 8000
 
 Abrir `http://localhost:8000`.
 
-## Publicación en GitHub Pages
+## Publicación
 
-1. Reemplazar el contenido del repositorio por estos archivos.
-2. Confirmar que `CNAME` mantiene `www.concriterio.cl`.
-3. Publicar desde la rama `main`, carpeta raíz.
-4. Limpiar caché del navegador o CDN.
-5. Realizar un envío de prueba y activar FormSubmit desde el correo recibido.
+1. Copiar **el contenido de esta carpeta** a la raíz real del repositorio.
+2. Mantener `CNAME` con `www.concriterio.cl`.
+3. Publicar GitHub Pages desde la rama y carpeta configuradas.
+4. Abrir el sitio en una ventana privada y comprobar la nueva versión.
+5. Probar menú, enlaces, formulario y vista previa social.
 
-## Pendientes que requieren insumos externos
+## Evolución
 
-- Sustituir monogramas por retratos profesionales cuando estén disponibles.
-- Conectar analítica solo después de elegir proveedor y política de privacidad.
-- Crear casos demostrables a medida que existan trabajos autorizados o anonimizados.
-
-### Privacidad del formulario
-
-FormSubmit es un proveedor externo y declara retener los envíos durante 30 días. Por eso la interfaz exige no incluir antecedentes sensibles. Para una etapa con mayor volumen o información reservada, debe migrarse a un backend propio o a un proveedor contratado con política de tratamiento definida.
-
-## Revisión responsive posterior
-
-La revisión posterior corrigió la causa de la extensión anormal en tablet y móvil: una regla general de grilla aparecía después de los breakpoints y volvía a crear dos columnas. Esto dejaba columnas de pocos píxeles, forzaba saltos de línea palabra por palabra y multiplicaba la altura de varias secciones.
-
-También se añadió cache-busting a CSS y JavaScript, se incorporaron los recursos territoriales y sociales faltantes y se validó el sitio sin desbordamiento horizontal entre 360 y 1440 px.
+La web refleja Con Criterio 1.0. Los cambios de producto, posicionamiento o método deben provenir de decisiones ya validadas, no de modificaciones aisladas de copy.

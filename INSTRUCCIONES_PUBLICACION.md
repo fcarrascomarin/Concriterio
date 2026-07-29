@@ -57,6 +57,6 @@ Después del despliegue:
 2. Abrir el sitio en una ventana privada.
 3. Verificar que el menú diga: **Qué hacemos, Servicios, Método, Equipo y Conversar**.
 4. Hacer una recarga forzada si todavía aparece el diseño anterior (`Ctrl + F5` en Windows o `Cmd + Shift + R` en macOS).
-5. Comprobar que el código fuente carga `css/styles.css?v=20260717-commercial-2`.
+5. Comprobar que el código fuente carga `css/styles.css?v=20260729-cc1`.
 
 El parámetro de versión evita que el navegador reutilice la hoja CSS anterior.

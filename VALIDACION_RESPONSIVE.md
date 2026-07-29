@@ -1,41 +1,29 @@
-# Validación responsive
+# Validación responsive · Con Criterio 1.0
 
-Validación local de la versión corregida. No se detectó desbordamiento horizontal en ninguna página o tamaño probado.
+Fecha: 29 de julio de 2026
 
-| Página | Pantalla | Altura total | Hero | Sin desborde |
-|---|---:|---:|---:|:---:|
-| index.html | 1440×900 | 8253 px | 828 px | Sí |
-| index.html | 1366×768 | 7972 px | 696 px | Sí |
-| index.html | 1024×768 | 9648 px | 779 px | Sí |
-| index.html | 768×1024 | 9798 px | 952 px | Sí |
-| index.html | 390×844 | 11076 px | 789 px | Sí |
-| index.html | 360×800 | 11224 px | 813 px | Sí |
-| servicios.html | 1440×900 | 4169 px | 393 px | Sí |
-| servicios.html | 1366×768 | 4089 px | 375 px | Sí |
-| servicios.html | 1024×768 | 4731 px | 339 px | Sí |
-| servicios.html | 768×1024 | 4861 px | 371 px | Sí |
-| servicios.html | 390×844 | 6150 px | 408 px | Sí |
-| servicios.html | 360×800 | 6379 px | 450 px | Sí |
-| metodo.html | 1440×900 | 4546 px | 393 px | Sí |
-| metodo.html | 1366×768 | 4438 px | 375 px | Sí |
-| metodo.html | 1024×768 | 4992 px | 339 px | Sí |
-| metodo.html | 768×1024 | 5101 px | 346 px | Sí |
-| metodo.html | 390×844 | 6451 px | 383 px | Sí |
-| metodo.html | 360×800 | 6728 px | 407 px | Sí |
-| nosotros.html | 1440×900 | 4169 px | 473 px | Sí |
-| nosotros.html | 1366×768 | 4081 px | 450 px | Sí |
-| nosotros.html | 1024×768 | 4889 px | 365 px | Sí |
-| nosotros.html | 768×1024 | 4833 px | 395 px | Sí |
-| nosotros.html | 390×844 | 6576 px | 477 px | Sí |
-| nosotros.html | 360×800 | 7000 px | 519 px | Sí |
+No se detectó desbordamiento horizontal en las páginas principales y tamaños probados.
 
-## Tamaños probados
+| Página | 1440×900 | 1366×768 | 1024×768 | 768×1024 | 390×844 | 360×800 |
+|---|---:|---:|---:|---:|---:|---:|
+| `index.html` | OK | OK | OK | OK | OK | OK |
+| `servicios.html` | OK | OK | OK | OK | OK | OK |
+| `metodo.html` | OK | OK | OK | OK | OK | OK |
+| `nosotros.html` | OK | OK | OK | OK | OK | OK |
 
-- Escritorio amplio: 1440×900.
-- Portátil habitual: 1366×768.
-- Portátil pequeño o tablet horizontal: 1024×768.
-- Tablet vertical: 768×1024.
-- Teléfono: 390×844.
-- Teléfono pequeño: 360×800.
+## Pantalla completa en escritorio
 
-La portada pasó de 10.063 px a aproximadamente 7.972 px en 1366×768 y de 14.704 px a aproximadamente 11.076 px en 390×844.
+Las secciones principales usan `.screen-section` con una altura mínima equivalente a la pantalla útil bajo el encabezado. En los dos tamaños de escritorio probados (1440×900 y 1366×768), ninguna sección narrativa principal requiere más de una pantalla para mostrar su contenido completo.
+
+## Tablet y móvil
+
+A partir de 1080 px hacia abajo se elimina deliberadamente la altura mínima de pantalla completa. Así el contenido crece de forma natural, sin quedar comprimido, recortado o superpuesto.
+
+El menú móvil:
+
+- se abre debajo del header;
+- usa fondo opaco;
+- permanece dentro del ancho de pantalla;
+- puede desplazarse si la altura disponible fuese insuficiente;
+- bloquea el scroll de fondo mientras está abierto;
+- se cierra al elegir un enlace, pulsar fuera, presionar `Escape` o volver a escritorio.

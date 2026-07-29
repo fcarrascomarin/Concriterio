@@ -1,19 +1,24 @@
-# Revisión técnica final · 17 de julio de 2026
+# Revisión técnica final · Con Criterio 1.0
+
+Fecha: 29 de julio de 2026
 
 ## Validaciones ejecutadas
 
-- Parseo de los seis archivos HTML sin referencias locales rotas.
-- Verificación de un único `h1` por página principal.
-- Verificación de textos alternativos en imágenes y etiquetas asociadas a los controles del formulario.
-- Validación sintáctica de `js/main.js` con Node.js.
-- Parseo completo de `css/styles.css` sin errores.
-- Comprobación de anclas internas de servicios y enlaces al aviso de privacidad.
-- Actualización de `sitemap.xml`, canonical y versión de caché de CSS/JS.
+- Revisión de enlaces relativos y anclas internas: sin referencias rotas.
+- Revisión de IDs duplicados: no detectados.
+- Sintaxis de `js/main.js` validada con Node.js.
+- `site.webmanifest` parseado correctamente como JSON.
+- Búsqueda en páginas públicas de nombres y slogans obsoletos: sin coincidencias.
+- Validación responsive en 1440×900, 1366×768, 1024×768, 768×1024, 390×844 y 360×800.
+- Sin desbordamiento horizontal en las páginas principales en todos los tamaños probados.
+- En 1440×900 y 1366×768, las secciones `.screen-section` caben dentro de la altura útil de una pantalla de escritorio.
+- Menú móvil comprobado con panel bajo el encabezado, fondo opaco, bloqueo de scroll, `aria-expanded` y cierre con `Escape`.
+- Formulario mantiene labels, validación nativa, honeypot y mensajes con `aria-live`.
+- Imagen Open Graph actualizada a la identidad Con Criterio 1.0.
 
-## Validaciones que deben realizarse después de publicar
+## Comprobaciones después de publicar
 
-- Activar FormSubmit desde el correo recibido en `contacto@concriterio.cl`.
-- Enviar consultas reales desde computador y teléfono.
-- Confirmar recepción, carpeta de spam y contenido de todos los campos.
-- Revisar visualmente la publicación en Chrome, Safari y Firefox.
-- Confirmar vista previa al compartir en WhatsApp y LinkedIn.
+- Confirmar que GitHub Pages sirva `css/styles.css?v=20260729-cc1` y `js/main.js?v=20260729-cc1`.
+- Probar el formulario desde teléfono y computador y activar FormSubmit si solicita verificación.
+- Revisar Chrome, Safari y Firefox en dispositivos reales.
+- Comprobar vista previa al compartir en LinkedIn, WhatsApp y otras redes.
